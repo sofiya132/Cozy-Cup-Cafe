@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Cup Café</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#cart" class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">0</span>
+                </a>
+
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home">
+    <h1>Cozy Cup Cafe</h1>
+    <p>"Life happens, coffee helps."</p>
+    <img src="img/Coffee-Croissant.webp" alt="Coffee">
+</section>
+
+
+<section id="login" class="login-container">
+    <h2>Login</h2>
+
+    <input id="username" type="text" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+</section>
+
+
+<section id="menu">
+<h2 class="page-title">Our Menu</h2>
+
+<div class="menu-container">
+    <a class="menu-card" href="coffee.html">
+        <img src="img/coffee.jpg">
+        <h3>☕ Coffee</h3>
+    </a>
+
+    <a class="menu-card" href="tea.html">
+        <img src="img/tea.jpg">
+        <h3>🍵 Tea</h3>
+    </a>
+
+    <a class="menu-card" href="snacks.html">
+        <img src="img/Nutella-Hand-Pies_EXPS_THCA19_188252_E08_22_4b.jpg">
+        <h3>🥐 Snacks and Puffs</h3>
+    </a>
+</div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p class="subtitle">We’d love to hear from you</p>
+
+  <div class="contact-box">
+    <div class="contact-info">
+      <p>📍 Bengaluru</p>
+      <p>📞 9876543210</p>
+      <p>✉ cozycupcafe@gmail.com</p>
+      <p>🕒 9 AM – 9 PM</p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Message"></textarea>
+      <button onclick="submitForm()">Send</button>
+
+    </form>
+  </div>
+</section>
+
+
+<section id="cart" class="cart-container">
+    <h2>🛒 Your Cart</h2>
+
+    <div id="cart-items">
+        <p>No items in cart</p>
+    </div>
+
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <h3>Cozy Cup Café</h3>
+        <p>Life happens, coffee helps.</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+             <a href="#cart">Cart</a>
+        </div>
+
+        <p class="footer-copy">
+            © 2025 Cozy Cup Café | Made with love 
+        </p>
+    </div>
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
