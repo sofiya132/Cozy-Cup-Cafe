@@ -1,14 +1,28 @@
 // ================= LOGIN =================
 function login() {
-    let user = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
 
-    if (user !== "" && pass !== "") {
-        alert("Login successful!");
-    } else {
-        alert("Please enter username and password");
+    if (email === "" || pass === "") {
+        alert("Please enter email and password");
+        return;
     }
+
+    if (!email.includes("@")) {
+        alert("Please enter a valid email");
+        return;
+    }
+
+    if (pass.length < 6) {
+        alert("Password must be at least 6 characters");
+        return;
+    }
+
+    alert("Login successful!");
 }
+
+
+
 
 // ================= CART (STORED IN LOCALSTORAGE) =================
 let cart = JSON.parse(localStorage.getItem("cart")) || {};
@@ -96,9 +110,35 @@ function updateCartCount() {
 }
 
 // ---------- LOAD ON PAGE ----------
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
     updateCart();
-};
+});
+
+
+
+function confirmOrder() {
+    if (Object.keys(cart).length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let total = document.getElementById("cart-total").innerText;
+
+    let confirmMsg = confirm(
+        "Are you sure you want to place the order?\nTotal Amount: ₹" + total
+    );
+
+    if (confirmMsg) {
+        alert("✅ Order Confirmed!\nThank you for shopping");
+
+        // 🔥 CLEAR CART PROPERLY
+        cart = {};
+        localStorage.removeItem("cart");
+
+        updateCart();
+    }
+}
+
 
 
 // ================= CONTACT =================

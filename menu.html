@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Cozy Cup Café</title>
-
+    <title>Menu| Cozy Cup Café</title>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-   <nav>
+    <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -27,15 +24,27 @@
         </li>
     </ul>
 </nav>
-
 </header>
+<section id="menu">
+    <h2 class="page-title">Our Menu</h2>
 
-<section id="home">
-    <h1>Cozy Cup Cafe</h1>
-    <p>"Life happens, coffee helps."</p>
-    <img src="img/Coffee-Croissant.webp" alt="Coffee">
+    <div class="menu-container">
+        <a class="menu-card" href="coffee.html">
+            <img src="img/coffee.jpg">
+            <h3>☕ Coffee</h3>
+        </a>
+
+        <a class="menu-card" href="tea.html">
+            <img src="img/tea.jpg">
+            <h3>🍵 Tea</h3>
+        </a>
+
+        <a class="menu-card" href="snacks.html">
+            <img src="img/Nutella-Hand-Pies_EXPS_THCA19_188252_E08_22_4b.jpg">
+            <h3>🥐 Snacks and Puffs</h3>
+        </a>
+    </div>
 </section>
-
 <footer class="footer">
     <div class="footer-content">
         <h3>Cozy Cup Café</h3>
@@ -57,3 +66,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+

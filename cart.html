@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart | Cozy Cup Café</title>
+
+     <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section class="cart-container">
+    <h2>🛒 Your Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+    <button onclick="confirmOrder()">Confirm Order</button>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <h3>Cozy Cup Café</h3>
+        <p>Life happens, coffee helps.</p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
+        </div>
+
+        <p class="footer-copy">
+            © 2025 Cozy Cup Café | Made with love 
+        </p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
