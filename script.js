@@ -79,7 +79,13 @@ function updateCart() {
     if (Object.keys(cart).length === 0) {
         cartContainer.innerHTML = "<p>No items in cart</p>";
     }
-
+    //dicount for above 1000
+if (total > 1000) {
+    document.getElementById("discountMsg").style.display = "block";
+    total = total - (total * 0.10);
+  }else {
+    document.getElementById("discountMsg").style.display = "none";
+  }
     totalSpan.innerText = total;
     if (cartCount) cartCount.innerText = count;
 }
