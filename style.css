@@ -218,6 +218,15 @@ About SECTION
   border-radius: 6px;
   cursor: pointer;
 }
+
+.success-msg {
+    display: none;
+    color: green;
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 500;
+}
+
 /*cart*/
 .cart-container {
     max-width: 500px;

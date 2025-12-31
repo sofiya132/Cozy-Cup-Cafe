@@ -140,8 +140,39 @@ function confirmOrder() {
 }
 
 
+//contact 
+document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-// ================= CONTACT =================
-function submitForm() {
-    alert("Thank you for contacting Cozy Cup Café!");
-}
+    const name = document.getElementById("fbName").value;
+    const email = document.getElementById("fbEmail").value;
+    const message = document.getElementById("fbMessage").value;
+
+    const entry =
+        `Name: ${name}\nEmail: ${email}\nMessage: ${message}\n------------------\n`;
+
+    // Save to localStorage
+    let stored = localStorage.getItem("feedbackData") || "";
+    stored += entry;
+    localStorage.setItem("feedbackData", stored);
+
+    // Create downloadable file
+    const blob = new Blob([stored], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "feedback.txt";
+    link.click();
+
+    // Show success message
+    document.getElementById("successMsg").style.display = "block";
+
+    // RESET FORM ✅
+    document.getElementById("feedbackForm").reset();
+
+    // Hide message after 3 seconds
+    setTimeout(() => {
+        document.getElementById("successMsg").style.display = "none";
+    }, 3000);
+});
+
+

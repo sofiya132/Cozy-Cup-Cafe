@@ -37,12 +37,19 @@
             <p>✉ cozycupcafe@gmail.com</p>
         </div>
 
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Message"></textarea>
-            <button onclick="submitForm()">Send</button>
-        </form>
+  <form class="contact-form" id="feedbackForm">
+    <input type="text" id="fbName" placeholder="Your Name" required>
+    <input type="email" id="fbEmail" placeholder="Your Email" required>
+    <textarea id="fbMessage" placeholder="Message" required></textarea>
+    <button type="submit">Send</button>
+
+    <p id="successMsg" style="display:none; color:green; margin-top:10px;">
+        Feedback submitted successfully!
+    </p>
+</form>
+
+
+
     </div>
 </section>
 
