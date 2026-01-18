@@ -38,10 +38,18 @@
         </div>
 
   <form class="contact-form" id="feedbackForm">
-    <input type="text" id="fbName" placeholder="Your Name" required>
     <input type="email" id="fbEmail" placeholder="Your Email" required>
+    <input type="text" id="fbMobile" placeholder="Your Mobile Number" required>
     <textarea id="fbMessage" placeholder="Message" required></textarea>
-    <button type="submit">Send</button>
+    <button type="submit">Send</button> <br><br>
+
+
+    <button type="button" onclick="clearForm()">Clear Form</button>
+
+<p id="thankMsg" style="display:none; color:blue; margin-top:10px;">
+    Thank you for your feedback!
+</p>
+
 
     <p id="successMsg" style="display:none; color:green; margin-top:10px;">
         Feedback submitted successfully!

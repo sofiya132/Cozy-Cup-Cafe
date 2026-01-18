@@ -150,12 +150,27 @@ function confirmOrder() {
 document.getElementById("feedbackForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.getElementById("fbName").value;
+   
     const email = document.getElementById("fbEmail").value;
+     const mobile = document.getElementById("fbMobile").value;
     const message = document.getElementById("fbMessage").value;
 
+   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobilePattern = /^[0-9]{10}$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address");
+        return;
+    }
+
+    if (!mobilePattern.test(mobile)) {
+        alert("Please enter a valid 10-digit mobile number");
+        return;
+    }
+
+
     const entry =
-        `Name: ${name}\nEmail: ${email}\nMessage: ${message}\n------------------\n`;
+        `Email: ${email}\nMobile: ${mobile}\nMessage: ${message}\n------------------\n`;
 
     // Save to localStorage
     let stored = localStorage.getItem("feedbackData") || "";
@@ -172,7 +187,7 @@ document.getElementById("feedbackForm").addEventListener("submit", function (e) 
     // Show success message
     document.getElementById("successMsg").style.display = "block";
 
-    // RESET FORM ✅
+    // RESET FORM 
     document.getElementById("feedbackForm").reset();
 
     // Hide message after 3 seconds
@@ -182,3 +197,8 @@ document.getElementById("feedbackForm").addEventListener("submit", function (e) 
 });
 
 
+//when clicked clear form
+function clearForm() {
+    document.getElementById("feedbackForm").reset();
+    document.getElementById("thankMsg").style.display = "block";
+}
